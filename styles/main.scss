@@ -1,0 +1,94 @@
+
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css); /*font awesome*/
+@import url(https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900);
+@import url(https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Roboto+Condensed:wght@400;700&family=Ubuntu&display=swap);
+@import url(reset.css); /*Reset*/
+@import url(https://fonts.googleapis.com/css2?family=Krona+One&display=swap);
+
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    h1 {
+        font-family: 'Krona One', sans-serif !important;
+        font-weight: bold;
+    }
+    h2,h3 {
+        font-family: 'Roboto', sans-serif !important;
+        font-weight: bold !important;
+    }
+    button {
+        &:hover{
+            transform: scale(1.05);
+        }
+        &:disabled {
+            opacity: .5;
+            transform: scale(1);
+        }
+    }
+}
+.escudo-top {
+    background-image: linear-gradient(#4492D6,white);
+    width: 100vw;
+    img {
+        width: 5rem;
+        height: 5rem;
+    }
+
+}
+
+.circle {
+    border-radius: 0.8em;
+    -moz-border-radius: 0.8em;
+    -webkit-border-radius: 0.8em;
+    color: #ffffff;
+    display: inline-block;
+    font-weight: bold;
+    line-height: 1.6em;
+    width: 0.01em; 
+    background-color: black;
+}
+
+main {
+    background-image: linear-gradient(white,#4492D6);
+
+    .card {
+        h5{
+          font-size: 100%;
+        }
+        height: 35vh;
+        margin:0.5rem;
+        &:hover{
+            transform: scale(1.02);
+            -webkit-box-shadow: 6px 6px 5px 0px rgba(194,206,242,1);
+            -moz-box-shadow: 6px 6px 5px 0px rgba(194,206,242,1);
+            box-shadow: 6px 6px 5px 0px rgba(194,206,242,1);
+        }
+        img {
+            
+            height: 25%;
+            width: 30%;
+        }
+    }
+    .arquero {
+        background-color:#F9E58A;
+    }
+    .defensor {
+        background-color:#D1FFBC;
+    }
+    .volante {
+        background-color: #BDF0FC;
+    }
+    .delantero {
+        background-color:#F7C0B5;
+    }
+
+
+}
+
+
+
+
+
+
+
+

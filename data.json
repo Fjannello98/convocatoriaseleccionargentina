@@ -1,0 +1,221 @@
+[
+    { 
+        "nombre":"Esteban Andrada",
+        "camiseta": 1,
+        "foto":"foto de andrada",
+        "club":"Boca Juniors",
+        "posicion":"Arquero"
+
+    },
+    {
+        "nombre":"Franco Armani",
+        "camiseta": 12,
+        "foto":"foto de armani",
+        "club":"River Plate",
+        "posicion":"Arquero"
+    },
+    {
+        "nombre":"Agustín Marchesin",
+        "camiseta": 25,
+        "foto":"foto de marchesin",
+        "club":"América (MEX)",
+        "posicion":"Arquero"
+    },
+    {
+        "nombre":"Juan Musso",
+        "camiseta": 32,
+        "foto":"foto de musso",
+        "club":"Udinese",
+        "posicion":"Arquero"
+    },
+    {
+        "nombre":"Emiliano Martínez",
+        "camiseta": 39,
+        "foto":"foto de emiliano martínez",
+        "club":"Arsenal",
+        "posicion":"Arquero"
+    },
+    {
+        "nombre":"Nicolás Otamendi",
+        "camiseta": 2,
+        "foto":"foto de otamendi",
+        "club":"Manchester City",
+        "posicion":"Defensor"
+    },
+    {
+        "nombre":"Nicolás Tagliafico",
+        "camiseta": 3,
+        "foto":"foto de tagliafico",
+        "club":"Ajax",
+        "posicion":"Defensor"
+    },
+    {
+        "nombre":"Renzo Saravia",
+        "camiseta": 4,
+        "foto":"foto de saravia",
+        "club":"Porto",
+        "posicion":"Defensor"
+    },
+    {
+        "nombre":"Leandro Paredes",
+        "camiseta": 5,
+        "foto":"foto de paredes",
+        "club":"Paris Saint-Germain",
+        "posicion":"Volante"
+    },
+    {
+        "nombre":"Germán Pezzella",
+        "camiseta": 6,
+        "foto":"foto de pezzella",
+        "club":"Fiorentina",
+        "posicion":"Defensor"
+    },
+    {
+        "nombre":"Marcos Acuña",
+        "camiseta": 8,
+        "foto":"foto de acuña",
+        "club":"Sporting",
+        "posicion":"Volante"
+    },
+    {
+        "nombre":"Sergio Agüero",
+        "camiseta": 9,
+        "foto":"foto de agüero",
+        "club":"Manchester City",
+        "posicion":"Delantero"
+    },
+    {
+        "nombre":"Lionel Messi",
+        "camiseta": 10,
+        "foto":"foto de messi",
+        "club":"Barcelona FC",
+        "posicion":"Delantero"
+    },
+    {
+        "nombre":"Roberto Pereyra",
+        "camiseta": 11,
+        "foto":"foto de pereyra",
+        "club":"Watford",
+        "posicion":"Volante"
+    },
+    {
+        "nombre":"Juan Foyth",
+        "camiseta": 13,
+        "foto":"foto de foyth",
+        "club":"Tottenham",
+        "posicion":"Defensor"
+    },
+    {
+        "nombre":"Giovanni Lo Celso",
+        "camiseta": 14,
+        "foto":"foto de lo celso",
+        "club":"Tottenham",
+        "posicion":"Volante"
+    },
+    {
+        "nombre":"Exequiel Palacios",
+        "camiseta": 15,
+        "foto":"foto de palacios",
+        "club":"Bayer Leverkusen",
+        "posicion":"Volante"
+    },
+    {
+        "nombre":"Rodrigo De Paul",
+        "camiseta": 16,
+        "foto":"foto de de paul",
+        "club":"Udinese",
+        "posicion":"Volante"
+    },
+    {
+        "nombre":"Alexis MacAllister",
+        "camiseta": 17,
+        "foto":"foto de macallister",
+        "club":"Brighton",
+        "posicion":"Volante"
+    },
+    {
+        "nombre":"Darío Benedetto",
+        "camiseta": 18,
+        "foto":"foto de benedetto",
+        "club":"Marsella",
+        "posicion":"Delantero"
+    },
+    {
+        "nombre":"Emmanuel Mammana",
+        "camiseta": 19,
+        "foto":"foto de mammana",
+        "club":"Zenit",
+        "posicion":"Defensor"
+    },
+    {
+        "nombre":"Paulo Dybala",
+        "camiseta": 21,
+        "foto":"foto de dybala",
+        "club":"Juventus",
+        "posicion":"Delantero"
+    },
+    {
+        "nombre":"Lautaro Martínez",
+        "camiseta": 22,
+        "foto":"foto de lautaro martinez",
+        "club":"Internazionale",
+        "posicion":"Delantero"
+    },
+    {
+        "nombre":"Milton Casco",
+        "camiseta": 23,
+        "foto":"foto de casco",
+        "club":"River Plate",
+        "posicion":"Defensor"
+    },
+    {
+        "nombre":"Leonardo Balerdi",
+        "camiseta": 24,
+        "foto":"foto de balerdi",
+        "club":"Borussia Dortmund",
+        "posicion":"Defensor"
+    },
+    {
+        "nombre":"Lucas Alario",
+        "camiseta": 27,
+        "foto":"foto de alario",
+        "club":"Bayer Leverkusen",
+        "posicion":"Delantero"
+    },
+    {
+        "nombre":"Walter Kannemann",
+        "camiseta": 29,
+        "foto":"foto de kannemann",
+        "club":"Gremio",
+        "posicion":"Defensor"
+    },
+    {
+        "nombre":"Guido Rodríguez",
+        "camiseta": 30,
+        "foto":"foto de rodriguez",
+        "club":"Betis",
+        "posicion":"Volante"
+    },
+    {
+        "nombre":"Nicolás Domínguez",
+        "camiseta": 31,
+        "foto":"foto de dominguez",
+        "club":"Bologna",
+        "posicion":"Volante"
+    },
+    {
+        "nombre":"Lucas Ocampos",
+        "camiseta": 33,
+        "foto":"foto de ocampos",
+        "club":"Sevilla",
+        "posicion":"Delantero"
+    },
+    {
+        "nombre":"Mauro Icardi",
+        "camiseta": 99,
+        "foto":"foto de icardi",
+        "club":"Paris Saint-Germain",
+        "posicion":"Delantero"
+    }
+
+]
