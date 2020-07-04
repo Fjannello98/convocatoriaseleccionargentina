@@ -318,7 +318,18 @@ var jugadores = [
         },
         club:"Sevilla",
         posicion:"Delantero"
+    },   
+     {
+        nombre:"Sebastián Driussi",
+        camiseta: 34,
+        foto:{
+            img:"images/jugadores/driussi.png",
+            alt:"Foto de Sebastián Driussi",
+        },
+        club:"Zenit",
+        posicion:"Delantero"
     },
+
     {
         nombre:"Adolfo Gaich",
         camiseta: 38,
@@ -327,16 +338,6 @@ var jugadores = [
             alt:"Foto de Adolfo Gaich",
         },
         club:"San Lorenzo",
-        posicion:"Delantero"
-    },
-    {
-        nombre:"Sebastián Driussi",
-        camiseta: 33,
-        foto:{
-            img:"images/jugadores/driussi.png",
-            alt:"Foto de Sebastián Driussi",
-        },
-        club:"Zenit",
         posicion:"Delantero"
     },
 
