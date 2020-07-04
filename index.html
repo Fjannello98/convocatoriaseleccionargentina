@@ -16,7 +16,7 @@
    <script defer src='load_jugadores.js'></script>
    <script defer src='convocar.js'></script>
    <script defer src='filters.js'></script>
-   <!--<script defer src='buscador.js'></script>-->
+   <script defer src='buscador.js'></script>
    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
@@ -93,7 +93,28 @@
      <div id="defensores" class="d-flex flex-row flex-wrap justify-content-center text-center p-3"></div> <br> 
      <div id="volantes" class="d-flex flex-row flex-wrap justify-content-center text-center p-3"></div>  <br>
      <div id="delanteros" class="d-flex flex-row flex-wrap justify-content-center text-center p-3"></div> <br>
-          
+     <div class="modal" id="lista_llena">
+      <div class="modal-dialog">
+          <div class="modal-content">
+
+                 <!-- Modal Header -->
+                   <div class="modal-header bg-danger">
+                       <h4 class="modal-title text-white">Limite de convocados alcanzado</h4>
+                       <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                         <p class="text-dark">El Reglamento de la FIFA permite una convocatoria con un número no mayor a 23 jugadores. Elimina jugadores de tu lista para poder agregar a este futbolista </p>
+                  </div>
+
+                  <!-- Modal footer -->
+                 <div class="modal-footer d-flex justify-content-center">
+                    <a class="text-white" data-toggle="modal" data-target="#lista_de_convocados" data-dismiss="modal"><button class="btn btn-primary">Ver lista</button></a>
+                 </div>
+
+           </div>
+      </div>
+  </div>       
    
    </div>  
   

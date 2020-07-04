@@ -19,11 +19,35 @@ arqueros.forEach(function(arquero){
          <li>Camiseta: ${arquero.camiseta} </li>
          <li>Club: ${arquero.club} </li>
       </ul>
-     <div class="text-center">
-      <button id="boton ${arquero.camiseta}" class="btn btn-primary boton_convocar" data-camiseta="${arquero.camiseta}" >Convocar</button>
-    </div> 
-    </div>
-  </div>`);
+      <div class="text-center">
+      <a class="text-white" data-toggle="modal" data-target="#modal_${arquero.camiseta}"><button id="pre_boton_convocar_${arquero.camiseta}" class="btn btn-primary pre_boton_convocar">Convocar</button></a>
+     </div> 
+     </div>
+   </div>
+   <div class="modal" id="modal_${arquero.camiseta}" data-backdrop="static" >
+   <div class="modal-dialog">
+       <div class="modal-content">
+ 
+              <!-- Modal Header -->
+                <div class="modal-header bg-primary">
+                    <h4 class="modal-title text-white">Convocar jugador</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+               </div>
+               <!-- Modal body -->
+               <div class="modal-body">
+                      <p class="text-dark">¿Convocar a ${arquero.nombre}? </p>
+                      <img  src="${arquero.foto.img}" alt="${arquero.foto.alt} float="right">
+               </div>
+ 
+               <!-- Modal footer -->
+              <div class="modal-footer d-flex justify-content-center">
+                 <button id="boton_${arquero.camiseta}" class="btn btn-success boton_convocar" data-camiseta="${arquero.camiseta}">Aceptar</button>
+                 <button class="btn btn-danger" type="button" data-dismiss="modal">Cancelar</button>
+              </div>
+ 
+        </div>
+   </div>
+ </div>`);
 });
 
 var block_defensores = $("#defensores");
@@ -41,10 +65,34 @@ defensores.forEach(function(defensor){
          <li>Club: ${defensor.club} </li>
       </ul>
      <div class="text-center">
-      <button id="boton ${defensor.camiseta}" class="btn btn-primary boton_convocar" data-camiseta="${defensor.camiseta}" >Convocar</button>
+     <a class="text-white" data-toggle="modal" data-target="#modal_${defensor.camiseta}"><button id="pre_boton_convocar_${defensor.camiseta}" class="btn btn-primary pre_boton_convocar">Convocar</button></a>
     </div> 
     </div>
-  </div>`)
+  </div>
+  <div class="modal" id="modal_${defensor.camiseta}" data-backdrop="static" >
+  <div class="modal-dialog">
+      <div class="modal-content">
+
+             <!-- Modal Header -->
+               <div class="modal-header bg-primary">
+                   <h4 class="modal-title text-white">Convocar jugador</h4>
+                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <!-- Modal body -->
+              <div class="modal-body">
+                     <p class="text-dark">¿Convocar a ${defensor.nombre}? </p>
+                     <img  src="${defensor.foto.img}" alt="${defensor.foto.alt} float="right">
+              </div>
+
+              <!-- Modal footer -->
+             <div class="modal-footer d-flex justify-content-center">
+                <button id="boton_${defensor.camiseta}" class="btn btn-success boton_convocar" data-camiseta="${defensor.camiseta}">Aceptar</button>
+                <button class="btn btn-danger" type="button" data-dismiss="modal">Cancelar</button>
+             </div>
+
+       </div>
+  </div>
+</div>`)
 });
 
 var block_volantes = $("#volantes");
@@ -61,11 +109,35 @@ volantes.forEach(function(volante){
          <li>Camiseta: ${volante.camiseta} </li>
          <li>Club: ${volante.club} </li>
       </ul>
-     <div class="text-center">
-      <button id="boton ${volante.camiseta}" class="btn btn-primary boton_convocar" data-camiseta="${volante.camiseta}" >Convocar</button>
-    </div> 
-    </div>
-  </div>`)
+      <div class="text-center">
+      <a class="text-white" data-toggle="modal" data-target="#modal_${volante.camiseta}"><button id="pre_boton_convocar_${volante.camiseta}" class="btn btn-primary pre_boton_convocar">Convocar</button></a>
+     </div> 
+     </div>
+   </div>
+   <div class="modal" id="modal_${volante.camiseta}" data-backdrop="static" >
+   <div class="modal-dialog">
+       <div class="modal-content">
+ 
+              <!-- Modal Header -->
+                <div class="modal-header bg-primary">
+                    <h4 class="modal-title text-white">Convocar jugador</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+               </div>
+               <!-- Modal body -->
+               <div class="modal-body">
+                      <p class="text-dark">¿Convocar a ${volante.nombre}? </p>
+                      <img  src="${volante.foto.img}" alt="${volante.foto.alt} float="right">
+               </div>
+ 
+               <!-- Modal footer -->
+              <div class="modal-footer d-flex justify-content-center">
+                 <button id="boton_${volante.camiseta}" class="btn btn-success boton_convocar" data-camiseta="${volante.camiseta}">Aceptar</button>
+                 <button class="btn btn-danger" type="button" data-dismiss="modal">Cancelar</button>
+              </div>
+ 
+        </div>
+   </div>
+ </div>`)
 });
 
 var block_delanteros = $("#delanteros");
@@ -82,11 +154,35 @@ delanteros.forEach(function(delantero){
          <li>Camiseta: ${delantero.camiseta} </li>
          <li>Club: ${delantero.club} </li>
       </ul>
-     <div class="text-center">
-      <button id="boton ${delantero.camiseta}" class="btn btn-primary boton_convocar" data-camiseta="${delantero.camiseta}" >Convocar</button>
-    </div> 
-    </div>
-  </div>`)
+      <div class="text-center">
+      <a class="text-white" data-toggle="modal" data-target="#modal_${delantero.camiseta}"><button id="pre_boton_convocar_${delantero.camiseta}" class="btn btn-primary pre_boton_convocar">Convocar</button></a>
+     </div> 
+     </div>
+   </div>
+   <div class="modal" id="modal_${delantero.camiseta}" data-backdrop="static" >
+   <div class="modal-dialog">
+       <div class="modal-content">
+ 
+              <!-- Modal Header -->
+                <div class="modal-header bg-primary">
+                    <h4 class="modal-title text-white">Convocar jugador</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+               </div>
+               <!-- Modal body -->
+               <div class="modal-body">
+                      <p class="text-dark">¿Convocar a ${delantero.nombre}? </p>
+                      <img  src="${delantero.foto.img}" alt="${delantero.foto.alt} float="right">
+               </div>
+ 
+               <!-- Modal footer -->
+              <div class="modal-footer d-flex justify-content-center">
+                 <button id="boton_${delantero.camiseta}" class="btn btn-success boton_convocar" data-camiseta="${delantero.camiseta}">Aceptar</button>
+                 <button class="btn btn-danger" type="button" data-dismiss="modal">Cancelar</button>
+              </div>
+ 
+        </div>
+   </div>
+ </div>`)
 });
 
 
