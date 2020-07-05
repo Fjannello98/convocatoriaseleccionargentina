@@ -97,6 +97,7 @@ var jugadores = [
             img:"images/jugadores/paredes.png",
             alt:"Foto de Leandro Paredes",
         },
+        club:"Paris Saint-Germain",
         posicion:"Volante"
     },
     {

@@ -1,9 +1,6 @@
 // BUGS PENDIENTES
 /*
-1) Los btn "x" para eliminar jugadores de la lista no funcionan aún
-2) Agregar modal/alert personalizado de confirmación 
- 
-
+1) Pasos a seguir en convocatoria con AJAX y breadcrumb 
 */
 var convocatoria = [];
 var convocados_guardados = [];
@@ -38,18 +35,17 @@ switch (convocados_guardados){
           }
         
          localStorage.setItem('convocatoria',JSON.stringify(convocados_guardados));
-         addModal(jugador);
+         addModalConvocatoria(jugador);
          $(`#modal_${jugador.camiseta}`).modal('toggle');
          var boton_previo = $(`#pre_boton_convocar_${jugador.camiseta}`);
          boton_previo.attr('disabled',true);
+         boton_previo.addClass("fa fa-check bg-success").html("");
       }   
     });
     break;
 
   default:
     if (convocados_guardados.length == 23){
-      var boton_index = $(event.target).data("camiseta");
-      $(`#modal_${boton_index}`).modal('toggle');
       $("#lista_llena").show('fast');
       $("#lista_llena .close").click(function(){
                     $("#lista_llena").hide();
@@ -57,6 +53,8 @@ switch (convocados_guardados){
       $("#lista_llena a").click(function(){
         $("#lista_llena").hide();
       })
+      var boton_index = $(event.target).data("camiseta");
+      $(`#modal_${boton_index}`).modal('toggle');
      
     } else{
       jugadores.forEach(function(jugador){
@@ -69,10 +67,11 @@ switch (convocados_guardados){
             }
           
            localStorage.setItem('convocatoria',JSON.stringify(convocados_guardados));
-           addModal(jugador);
+           addModalConvocatoria(jugador);
            $(`#modal_${jugador.camiseta}`).modal('toggle');
            var boton_previo = $(`#pre_boton_convocar_${jugador.camiseta}`);
            boton_previo.attr('disabled',true);
+           boton_previo.addClass("fa fa-check bg-success text-white").html("");
         }   
       });
     } 
@@ -100,19 +99,18 @@ switch (convocados_guardados){
 
 function Llenar_lista(){  
 convocados_guardados.forEach(function(jugador){
-    addModal(jugador);
+    addModalConvocatoria(jugador);
 })
 }
 
 
 
 
-function addModal(jugador){
+function addModalConvocatoria(jugador){
   var lista_de_convocados = $("#lista_de_convocados_tbody");
-  let boton_convocar =$(`#boton_${jugador.camiseta}`);
-  boton_convocar.attr('disabled',true);
   var boton_previo = $(`#pre_boton_convocar_${jugador.camiseta}`);
   boton_previo.attr('disabled',true);
+  boton_previo.addClass("fa fa-check bg-success text-white").html("");
   lista_de_convocados.append(
   `<tr id="${jugador.nombre}">
   <td scope="col">${jugador.camiseta}</td>
@@ -139,57 +137,49 @@ function addModal(jugador){
 }
 
 // Borrar jugadores de la lista
-function Limpiar_lista(event){
-   localStorage.removeItem('convocatoria');
-   convocados_guardados=[];
-   arqueros_convocados=[];
-   defensores_convocados=[];
-   volantes_convocados=[];
-   delanteros_convocados=[];
-   var lista_de_convocados = $("#lista_de_convocados_tbody");
-   lista_de_convocados.html("");
-   Show_convocados_number();
-   $(".boton_convocar").attr("disabled",false);
-   $(".pre_boton_convocar").attr("disabled",false);
 
-}
+$("#limpiar_lista_btn").click(function(event){
+    Limpiar_lista();
+})
 
-/*
+
 function Delete(boton){
-      var boton_index = boton;
-      convocados_guardados.forEach(function(jugador){  
-      if (jugador.camiseta == boton_index ){
-      var jugador_index= convocados_guardados.indexOf(jugador); 
-      convocados_guardados =convocados_guardados.splice(jugador_index,1);
-      localStorage.setItem('convocatoria',convocados_guardados);
-      switch(jugador.posicion){
-        case "Arquero":
-         let jugador_index_arq = arqueros_convocados.indexOf(jugador); 
-         arqueros_convocados=arqueros_convocados.splice(jugador_index_arq,1);
-         break;
-        case "Defensor":
-          let jugador_index_def = defensores_convocados.indexOf(jugador); 
-          defensores_convocados=defensores_convocados.splice(jugador_index_def,1);
-         break;
-        case "Volante":
-          let jugador_index_vol = volantes_convocados.indexOf(jugador); 
-          volantes_convocados=volantes_convocados.splice(jugador_index_vol,1);
-          break;
-        case "Delantero":
-          let jugador_index_del = delanteros_convocados.indexOf(jugador); 
-          delanteros_convocados = delanteros_convocados.splice(jugador_index_del,1);
-          break;      
-      };
-      $("#lista_de_convocados_tbody").html('');
-      Llenar_lista();
-   }
-  })   
-  
-
+  if (convocados_guardados.length == 1){
+       Limpiar_lista()
+  } 
+  else {
+    var boton_index = boton;
+    $(`#pre_boton_convocar_${boton}`).attr("disabled",false).removeClass("fa fa-check bg-success text-white").html("Convocar");
+    convocados_guardados.forEach(function(jugador){  
+        if (jugador.camiseta == boton_index ){
+         var jugador_index= convocados_guardados.indexOf(jugador); 
+         convocados_guardados.splice(jugador_index,1);
+         arqueros_convocados=[];
+         defensores_convocados=[];
+         volantes_convocados=[];
+         delanteros_convocados=[];
+         $("#lista_de_convocados_tbody").html('');
+         localStorage.setItem('convocatoria',JSON.stringify(convocados_guardados));
+         Llenar_lista();
+        }
+    })
+  }   
 }
-*/
 
-
+function Limpiar_lista(){
+localStorage.removeItem('convocatoria');
+convocados_guardados=[];
+arqueros_convocados=[];
+defensores_convocados=[];
+volantes_convocados=[];
+delanteros_convocados=[];
+var lista_de_convocados = $("#lista_de_convocados_tbody");
+lista_de_convocados.html("");
+Show_convocados_number();
+$(".boton_convocar").attr("disabled",false);
+$(".pre_boton_convocar").attr("disabled",false);
+$(".pre_boton_convocar").removeClass("fa fa-check bg-success text-white").html("Convocar");
+}
 
 function Show_convocados_number(){
   var convocados_nro=$("#nro_de_convocados");

@@ -21,9 +21,17 @@
    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body class="pt-5 text-center">
-   <div class="escudo-top container-fluid text-center fixed-top">
+   <div class="escudo-top container-fluid d-flex fixed-top justify-content-between align-items-baseline">
+    <h1 class="h5 text-white"> Copa del Mundo de la FIFA Qatar 2022</h1>
      <button class="btn btn-none t-0 text-center" id="menu-toggle"><a href="index.html"><img class="t-0 b-0"  src="images/afa.png" alt="escudo"></a></button>
-     <a class="text-white" data-toggle="modal" data-target="#lista_de_convocados"><button class="btn btn-primary">Ver lista</button></a> 
+     <a class="text-white" data-toggle="modal" data-target="#lista_de_convocados"><button class="btn btn-outline-light">Ver lista</button></a>
+     <form>
+      <div class="form-group d-flex align-items-baseline">
+        <input type="text" id="buscador_input" class="form-control"/>
+        <input id="buscador_button" type="submit" value="Buscar" class="btn btn-primary"/>
+         
+     </div>
+</form> 
    </div>
    <div class="modal" id="lista_de_convocados">
       <div class="modal-dialog">
@@ -36,7 +44,13 @@
                   </div>
                   <!-- Modal body -->
                   <div class="modal-body">
-                      <button type="submit" class="btn btn-outline-info" onclick="Limpiar_lista()">Limpiar lista</button>
+                    <div class="container-fluid card-list d-flex inline-flex">
+                             <div class="card col-4 p-0 border-info"> Convocatoria </div>
+                             <div class="card col-4 p-0">Confirmación</div>
+                             <div class="card col-4 p-0">Envío</div> 
+                   </div>
+                    <br>
+                      <button id="limpiar_lista_btn" type="submit" class="btn btn-outline-info">Limpiar lista</button>
 
                       <ul id="posiciones" class="list-unstyled">
                          <li id="nro_de_convocados"></li>
@@ -59,8 +73,9 @@
                   </div>
 
                   <!-- Modal footer -->
-                 <div class="modal-footer">
-                       <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                 <div class="modal-footer d-flex justify-content-between">
+                       <button type="button" class="btn btn-outline-info">Confirmar</button>
+                       <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cerrar</button>
                  </div>
 
            </div>
@@ -68,27 +83,17 @@
   </div>
    
   <main class="mt-5">
-   <h1 class="h1 text-center text-dark mt-5"> Convocatoria al Mundial</h1>
-   
-   <div class="container">
-      <form>
-            <div class="form-group d-flex align-items-baseline">
-              <input type="text" id="buscador_input" class="form-control" value="" />
-              <input id="buscador_boton" type="submit" value="Buscar" class="btn btn-primary" onclick="Validar_busqueda()" />
-               
-           </div>
-     </form>
-    <div class="col-10-12"><p id="buscador_resultados"></strong></p></div>
-    <div class="mt-2">
-     <label id="label-todos" class="radio-inline p-3"><input type="radio" name="optradio" data-filtro="todos" checked> Todos</label> 
-     <label id="label-arqueros" class="radio-inline p-3"><input type="radio" name="optradio" data-filtro="arqueros"> Arqueros</label> 
-     <label id="label-defensores"class="radio-inline p-3"><input type="radio" name="optradio" data-filtro="defensores"> Defensores</label> 
-     <label id="label-volantes" class="radio-inline p-3"><input type="radio" name="optradio" data-filtro="volantes"> Volantes</label> 
-     <label id="label-delanteros"class="radio-inline p-3"><input type="radio" name="optradio" data-filtro="delanteros"> Delanteros</label>
+   <div class="container bg-primary mt-5 rounded-bottom p-0">
+      <div class="p-0 btn-group" role="group">
+          <button class="filtro_button btn btn-outline-light bg-light text-primary" data-filtro="todos"> Todos</button> 
+          <button class="filtro_button btn btn-outline-light" data-filtro="arqueros"> Arqueros</button> 
+          <button class="filtro_button btn btn-outline-light" data-filtro="defensores"> Defensores</button> 
+          <button class="filtro_button btn btn-outline-light" data-filtro="volantes"> Volantes</button> 
+          <button class="filtro_button btn btn-outline-light" data-filtro="delanteros"> Delanteros</label>
      </div> 
-   </div> 
-
-   <div class="container-fluid">
+   </div>
+   <div class="container-fluid mt-5">
+     <div class="col-10-12"><p id="buscador_resultados"></p></div> 
      <div id="arqueros" class="d-flex flex-row flex-wrap justify-content-center text-center p-3"> </div> <Br>
      <div id="defensores" class="d-flex flex-row flex-wrap justify-content-center text-center p-3"></div> <br> 
      <div id="volantes" class="d-flex flex-row flex-wrap justify-content-center text-center p-3"></div>  <br>
@@ -109,7 +114,7 @@
 
                   <!-- Modal footer -->
                  <div class="modal-footer d-flex justify-content-center">
-                    <a class="text-white" data-toggle="modal" data-target="#lista_de_convocados" data-dismiss="modal"><button class="btn btn-primary">Ver lista</button></a>
+                    <a class="text-white" data-toggle="modal" data-target="#lista_de_convocados"><button class="btn btn-primary">Ver lista</button></a>
                  </div>
 
            </div>
@@ -117,7 +122,6 @@
   </div>       
    
    </div>  
-  
   </main>
 
 

@@ -12,15 +12,15 @@ arqueros.forEach(function(arquero){
     <div class="card-body">
       <div class="card-title">
         <img class="card-img-top" src="${arquero.foto.img}" alt="${arquero.foto.alt}">
-        <h5>${arquero.nombre}</h5>
+        <h5 class="search_value">${arquero.nombre}</h5>
       </div>  
       <ul class="list-unstyled">
-         <li>Posición: Arquero</li>
+         <li class="search_value">Posición: Arquero</li>
          <li>Camiseta: ${arquero.camiseta} </li>
          <li>Club: ${arquero.club} </li>
       </ul>
       <div class="text-center">
-      <a class="text-white" data-toggle="modal" data-target="#modal_${arquero.camiseta}"><button id="pre_boton_convocar_${arquero.camiseta}" class="btn btn-primary pre_boton_convocar">Convocar</button></a>
+      <a class="text-white" data-toggle="modal" data-target="#modal_${arquero.camiseta}"><button id="pre_boton_convocar_${arquero.camiseta}" class="btn btn-outline-primary pre_boton_convocar">Convocar</button></a>
      </div> 
      </div>
    </div>
@@ -57,15 +57,15 @@ defensores.forEach(function(defensor){
     <div class="card-body">
       <div class="card-title">
         <img class="card-img-top" src="${defensor.foto.img}" alt="${defensor.foto.alt}">
-        <h5>${defensor.nombre}</h5>
+        <h5 class="search_value">${defensor.nombre}</h5>
       </div>  
       <ul class="list-unstyled">
-         <li>Posición: Defensor</li>
+         <li class="search_value">Posición: Defensor</li>
          <li>Camiseta: ${defensor.camiseta} </li>
          <li>Club: ${defensor.club} </li>
       </ul>
      <div class="text-center">
-     <a class="text-white" data-toggle="modal" data-target="#modal_${defensor.camiseta}"><button id="pre_boton_convocar_${defensor.camiseta}" class="btn btn-primary pre_boton_convocar">Convocar</button></a>
+     <a class="text-white" data-toggle="modal" data-target="#modal_${defensor.camiseta}"><button id="pre_boton_convocar_${defensor.camiseta}" class="btn btn-outline-primary pre_boton_convocar">Convocar</button></a>
     </div> 
     </div>
   </div>
@@ -102,15 +102,15 @@ volantes.forEach(function(volante){
     <div class="card-body">
       <div class="card-title">
         <img class="card-img-top" src="${volante.foto.img}" alt="${volante.foto.alt}">
-        <h5>${volante.nombre}</h5>
+        <h5 class="search_value">${volante.nombre}</h5>
       </div>  
       <ul class="list-unstyled">
-         <li>Posición: Volante</li>
+         <li class="search_value">Posición: Volante</li>
          <li>Camiseta: ${volante.camiseta} </li>
          <li>Club: ${volante.club} </li>
       </ul>
       <div class="text-center">
-      <a class="text-white" data-toggle="modal" data-target="#modal_${volante.camiseta}"><button id="pre_boton_convocar_${volante.camiseta}" class="btn btn-primary pre_boton_convocar">Convocar</button></a>
+      <a class="text-white" data-toggle="modal" data-target="#modal_${volante.camiseta}"><button id="pre_boton_convocar_${volante.camiseta}" class="btn btn-outline-primary pre_boton_convocar">Convocar</button></a>
      </div> 
      </div>
    </div>
@@ -147,15 +147,15 @@ delanteros.forEach(function(delantero){
     <div class="card-body">
       <div class="card-title">
         <img class="card-img-top" src="${delantero.foto.img}" alt="${delantero.foto.alt}">
-        <h5>${delantero.nombre}</h5>
+        <h5 class="search_value">${delantero.nombre}</h5>
       </div>  
       <ul class="list-unstyled">
-         <li>Posición: Delantero</li>
+         <li class="search_value">Posición: Delantero</li>
          <li>Camiseta: ${delantero.camiseta} </li>
          <li>Club: ${delantero.club} </li>
       </ul>
       <div class="text-center">
-      <a class="text-white" data-toggle="modal" data-target="#modal_${delantero.camiseta}"><button id="pre_boton_convocar_${delantero.camiseta}" class="btn btn-primary pre_boton_convocar">Convocar</button></a>
+      <a class="text-white" data-toggle="modal" data-target="#modal_${delantero.camiseta}"><button id="pre_boton_convocar_${delantero.camiseta}" class="btn btn-outline-primary pre_boton_convocar">Convocar</button></a>
      </div> 
      </div>
    </div>

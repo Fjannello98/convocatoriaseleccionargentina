@@ -1,33 +1,27 @@
+/* 
+var buscador_input = $("#buscador_input");
+var buscador_button = $("#buscador_button");
 
+localStorage.setItem("busqueda","");
 
-//El buscador rompe la lista de convocatoria. Aún no hace la búsqueda pero aparece bien. 
-var results_storage = localStorage.getItem('busqueda');    
-if (results_storage == null) {
-    localStorage.setItem('busqueda','');
-    var buscador_resultados = document.getElementById("buscador_resultados");
-    buscador_resultados.innerHTML = ``;
-} else {
-    window.onload= function(){
-        var buscador_resultados = document.getElementById("buscador_resultados");
-        buscador_resultados.innerHTML = `<strong><span id="buscador_cantidad"></span></strong> resultados de búsqueda <strong><span id="buscador_key">${results_storage}<button type="button" class="close" onclick="Remove()">&times;</button></span>`;
-    }
+buscador_button.click(function(event){
+     localStorage.setItem("busqueda",buscador_input.value);
+})
+
+$(document).ready(function(){
+    var results_storage = localStorage.getItem("busqueda");
+    var encontrado = search(results_storage);
+
+})
+
+function search(value){
+    var results= [];
+    var search_values = $(".search_value");
+    search_values.forEach(function(search_value){
+         if (search_value.toLowerCase().includes(value.toLowerCase())){
+             results.push(search_value)
+         }
+    })
+    return results;
 }
-var busqueda = document.getElementById("buscador_input");
-
-function Validar_busqueda(){
-    var valor_de_busqueda = busqueda.value;
-    if (valor_de_busqueda.trim() !== ''){
-      Buscar_palabra(valor_de_busqueda);
-    }
-  }
-  
-function Buscar_palabra(valor_de_busqueda){
-    localStorage.setItem('busqueda',valor_de_busqueda);
-}
-
-
-function Remove(){
-   localStorage.removeItem('busqueda');
-   var buscador_resultados = document.getElementById("buscador_resultados");
-   buscador_resultados.innerHTML = ``;
-}
+*/

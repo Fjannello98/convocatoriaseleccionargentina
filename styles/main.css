@@ -25,61 +25,83 @@ body button:hover {
 }
 
 body button:disabled {
-  opacity: .5;
   -webkit-transform: scale(1);
           transform: scale(1);
 }
 
-.escudo-top {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#4492D6), to(white));
-  background-image: linear-gradient(#4492D6, white);
+body .btn-outline-light:hover {
+  color: #002FA7;
+}
+
+body .btn-outline-primary {
+  border-color: #002FA7;
+  color: #002FA7;
+}
+
+body .btn-outline-primary:hover {
+  border-color: #002FA7;
+  background-color: #002FA7;
+  color: white;
+}
+
+body .text-primary {
+  color: #002FA7;
+}
+
+body .bg-primary {
+  background-color: #002FA7 !important;
+  color: white;
+}
+
+body .escudo-top {
+  background-color: #002FA7 !important;
+  border-color: #002FA7 !important;
   width: 100vw;
 }
 
-.escudo-top img {
+body .escudo-top img {
   width: 5rem;
   height: 5rem;
 }
 
-main {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(#4492D6));
-  background-image: linear-gradient(white, #4492D6);
+body main {
+  background-color: #3366FF;
 }
 
-main .card {
+body main .card {
   height: 35vh;
   margin: 0.5rem;
 }
 
-main .card h5 {
+body main .card h5 {
   font-size: 100%;
 }
 
-main .card:hover {
+body main .card:hover {
   -webkit-transform: scale(1.02);
           transform: scale(1.02);
-  -webkit-box-shadow: 6px 6px 5px 0px #c2cef2;
-  box-shadow: 6px 6px 5px 0px #c2cef2;
+  -webkit-box-shadow: 10px 10px 5px -7px #224dba;
+  box-shadow: 10px 10px 5px -7px #224dba;
 }
 
-main .card img {
+body main .card img {
   height: 25%;
   width: 30%;
 }
 
-main .arquero {
+body main .arquero {
   background-color: #F9E58A;
 }
 
-main .defensor {
+body main .defensor {
   background-color: #D1FFBC;
 }
 
-main .volante {
+body main .volante {
   background-color: #BDF0FC;
 }
 
-main .delantero {
+body main .delantero {
   background-color: #F7C0B5;
 }
 /*# sourceMappingURL=main.css.map */
