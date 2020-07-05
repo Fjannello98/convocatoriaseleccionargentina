@@ -8,7 +8,7 @@ Dividir_por_posicion(jugadores);
 var block_arqueros = $("#arqueros");
 arqueros.forEach(function(arquero){
     block_arqueros.append( 
-    `<div class="card arquero col-xs-9 col-sm-9 col-md-4 col-lg-2">
+    `<div id="${arquero.camiseta}" class="card arquero col-xs-9 col-sm-9 col-md-4 col-lg-2">
     <div class="card-body">
       <div class="card-title">
         <img class="card-img-top" src="${arquero.foto.img}" alt="${arquero.foto.alt}">
@@ -53,7 +53,7 @@ arqueros.forEach(function(arquero){
 var block_defensores = $("#defensores");
 defensores.forEach(function(defensor){
     block_defensores.append(
-    `<div class="card defensor col-xs-9 col-sm-9 col-md-4 col-lg-2">
+    `<div id="${defensor.camiseta}" class="card defensor col-xs-9 col-sm-9 col-md-4 col-lg-2">
     <div class="card-body">
       <div class="card-title">
         <img class="card-img-top" src="${defensor.foto.img}" alt="${defensor.foto.alt}">
@@ -98,7 +98,7 @@ defensores.forEach(function(defensor){
 var block_volantes = $("#volantes");
 volantes.forEach(function(volante){
     block_volantes.append( 
-    `<div class="card volante col-xs-9 col-sm-9 col-md-4 col-lg-2">
+    `<div id="${volante.camiseta}" class="card volante col-xs-9 col-sm-9 col-md-4 col-lg-2">
     <div class="card-body">
       <div class="card-title">
         <img class="card-img-top" src="${volante.foto.img}" alt="${volante.foto.alt}">
@@ -143,7 +143,7 @@ volantes.forEach(function(volante){
 var block_delanteros = $("#delanteros");
 delanteros.forEach(function(delantero){
     block_delanteros.append(  
-    `<div class="card delantero col-xs-9 col-sm-9 col-md-4 col-lg-2">
+    `<div id="${delantero.camiseta}" class="card delantero col-xs-9 col-sm-9 col-md-4 col-lg-2">
     <div class="card-body">
       <div class="card-title">
         <img class="card-img-top" src="${delantero.foto.img}" alt="${delantero.foto.alt}">
