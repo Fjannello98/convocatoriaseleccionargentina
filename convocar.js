@@ -166,7 +166,7 @@ function Delete(boton){
   }   
 }
 
-function Limpiar_lista(){ 
+function Limpiar_lista(){
 localStorage.removeItem('convocatoria');
 convocados_guardados=[];
 arqueros_convocados=[];
@@ -179,19 +179,18 @@ Show_convocados_number();
 $(".boton_convocar").attr("disabled",false);
 $(".pre_boton_convocar").attr("disabled",false);
 $(".pre_boton_convocar").removeClass("fa fa-check bg-success text-white").html("Convocar");
-
 }
 
 function Show_convocados_number(){
   var convocados_nro=$("#nro_de_convocados");
   convocados_nro.html(`<div class="circle yellow"></div> <b>Jugadores convocados: ${arqueros_convocados.length + defensores_convocados.length + volantes_convocados.length+delanteros_convocados.length}</b>`);
   var arqueros_nro = $("#nro_de_arqueros_convocados");
-  arqueros_nro.html(`<div class="circle yellow"></div> Arqueros: ${arqueros_convocados.length}`);
+  arqueros_nro.html(`<div class="circle yellow"></div> Arqueros convocados: ${arqueros_convocados.length}`);
   var defensores_nro = $("#nro_de_defensores_convocados");
-  defensores_nro.html(`<div class="circle green"></div> Defensores: ${defensores_convocados.length}`);
+  defensores_nro.html(`<div class="circle green"></div> Defensores convocados: ${defensores_convocados.length}`);
   var volantes_nro = $("#nro_de_volantes_convocados");
-  volantes_nro.html(`<div class="circle blue"></div> Volantes: ${volantes_convocados.length}`);
+  volantes_nro.html(`<div class="circle blue"></div> Volantes convocados: ${volantes_convocados.length}`);
   var delanteros_nro = $("#nro_de_delanteros_convocados");
-  delanteros_nro.html(`<div class="circle red"></div>Delanteros: ${delanteros_convocados.length}`)
+  delanteros_nro.html(`<div class="circle red"></div>Delanteros convocados: ${delanteros_convocados.length}`)
   ;
 }

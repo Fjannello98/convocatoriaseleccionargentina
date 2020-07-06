@@ -1,34 +1,10 @@
-jugadores=[];
 arqueros=[];
 defensores=[];
 volantes=[];
 delanteros=[];
 
+Dividir_por_posicion(jugadores);
 
-
-var localUrl = "http://192.168.0.14:8080/Desktop/Estudio/Curso%20de%20Javascript/data/data.json"
-
-
-$.ajax ({
-    method: "GET",
-    url: localUrl
-
-}) .done (function (data){
-    Load_data(data)
-}) .fail (function (data){
-   console.log("Error")
-})
-
-
-function Load_data(elements){
-  elements.forEach(function(element){
-      jugadores.push(element)
-  })
-  Dividir_por_posicion(jugadores);
-  Aparecer();
-}
-
-function Aparecer(){
 var block_arqueros = $("#arqueros");
 arqueros.forEach(function(arquero){
     block_arqueros.append( 
@@ -209,7 +185,7 @@ delanteros.forEach(function(delantero){
  </div>`)
 });
 
-}
+
 
 
 
