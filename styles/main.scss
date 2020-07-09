@@ -253,3 +253,14 @@ body {
 }
 
 
+@media (max-width:1000px){
+    .card-body {
+        padding: 0 !important;
+    }
+    .card-body .list-unstyled {
+        font-size: 70% !important;
+    }
+    .pre_boton_convocar {
+        font-size: 80% !important;
+    }
+}

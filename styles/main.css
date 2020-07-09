@@ -350,4 +350,16 @@ body main .delantero {
   bottom: 0 !important;
   height: 100% !important;
 }
+
+@media (max-width: 1000px) {
+  .card-body {
+    padding: 0 !important;
+  }
+  .card-body .list-unstyled {
+    font-size: 70% !important;
+  }
+  .pre_boton_convocar {
+    font-size: 80% !important;
+  }
+}
 /*# sourceMappingURL=main.css.map */
