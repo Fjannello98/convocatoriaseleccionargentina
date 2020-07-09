@@ -1,6 +1,7 @@
 var filtro_buttons = $(".filtro_button");
 
 filtro_buttons.click(function(event){
+    Remove_search();
     var indexbutton= $(event.target).data("filtro");
     filtro_buttons.removeClass().addClass("filtro_button btn btn-outline-light")
     $(event.target).addClass("bg-light text-primary");

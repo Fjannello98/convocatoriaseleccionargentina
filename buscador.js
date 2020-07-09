@@ -13,7 +13,7 @@ $(document).ready(function(){
     if (busqueda !== ''){
       Search(busqueda);
       Filter_results(results);
-      $("#buscador_resultados").append(`<strong class="mr-2"><span id="buscador_cantidad">${results.length}</span></strong> resultados de búsqueda <strong class="ml-2"><span id="buscador_key">${localStorage.getItem("busqueda")}<button type="button" class="close ml-2" onclick="Remove()">&times;</button></span>`);
+      $("#buscador_resultados").append(`<strong class="mr-2"><span id="buscador_cantidad">${results.length}</span></strong> resultados de búsqueda <strong class="ml-2"><span id="buscador_key">${localStorage.getItem("busqueda")}<button type="button" class="close ml-2" onclick="Remove_search()">&times;</button></span>`);
     }
 })
 
@@ -36,7 +36,7 @@ function Filter_results(value){
 }
 
 
-function Remove(){
+function Remove_search(){
     localStorage.removeItem('busqueda');
     var buscador_resultados = $("#buscador_resultados");
     buscador_resultados.html(``);

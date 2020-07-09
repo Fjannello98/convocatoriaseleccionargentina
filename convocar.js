@@ -1,7 +1,4 @@
-// BUGS PENDIENTES
-/*
-1) Pasos a seguir en convocatoria con AJAX y breadcrumb 
-*/
+
 var convocatoria = [];
 var convocados_guardados = [];
 var arqueros_convocados=[];
@@ -17,6 +14,12 @@ $(document).ready(function getStorage(){
 })
 
 
+
+function Llenar_lista(){  
+  convocados_guardados.forEach(function(jugador){
+      addModalConvocatoria(jugador);
+  })
+}
 
 
 
@@ -79,33 +82,11 @@ switch (convocados_guardados){
 }
 
   
-})
-
-   
+});
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-function Llenar_lista(){  
-convocados_guardados.forEach(function(jugador){
-    addModalConvocatoria(jugador);
-})
-}
-
-
-
-
+// Agregar futbolistas al modal de convocados
 function addModalConvocatoria(jugador){
   var lista_de_convocados = $("#lista_de_convocados_tbody");
   var boton_previo = $(`#pre_boton_convocar_${jugador.camiseta}`);
@@ -136,13 +117,21 @@ function addModalConvocatoria(jugador){
   Show_convocados_number();
 }
 
-// Borrar jugadores de la lista
 
+
+
+
+
+
+/* Borrar jugadores de la lista */
+
+
+// Borrar todos (Limpiar lista)
 $("#limpiar_lista_btn").click(function(event){
     Limpiar_lista();
 })
 
-
+// Borrar uno
 function Delete(boton){
   if (convocados_guardados.length == 1){
        Limpiar_lista()
@@ -181,16 +170,164 @@ $(".pre_boton_convocar").attr("disabled",false);
 $(".pre_boton_convocar").removeClass("fa fa-check bg-success text-white").html("Convocar");
 }
 
+
+
+
+
+
+// Mostrar cantidad de convocados en la lista
 function Show_convocados_number(){
   var convocados_nro=$("#nro_de_convocados");
   convocados_nro.html(`<div class="circle yellow"></div> <b>Jugadores convocados: ${arqueros_convocados.length + defensores_convocados.length + volantes_convocados.length+delanteros_convocados.length}</b>`);
-  var arqueros_nro = $("#nro_de_arqueros_convocados");
-  arqueros_nro.html(`<div class="circle yellow"></div> Arqueros convocados: ${arqueros_convocados.length}`);
-  var defensores_nro = $("#nro_de_defensores_convocados");
-  defensores_nro.html(`<div class="circle green"></div> Defensores convocados: ${defensores_convocados.length}`);
-  var volantes_nro = $("#nro_de_volantes_convocados");
-  volantes_nro.html(`<div class="circle blue"></div> Volantes convocados: ${volantes_convocados.length}`);
-  var delanteros_nro = $("#nro_de_delanteros_convocados");
-  delanteros_nro.html(`<div class="circle red"></div>Delanteros convocados: ${delanteros_convocados.length}`)
+  var arqueros_nro = $(".nro_de_arqueros_convocados");
+  arqueros_nro.html(`<div class="circle yellow"></div> Arqueros: ${arqueros_convocados.length}`);
+  var defensores_nro = $(".nro_de_defensores_convocados");
+  defensores_nro.html(`<div class="circle green"></div> Defensores: ${defensores_convocados.length}`);
+  var volantes_nro = $(".nro_de_volantes_convocados");
+  volantes_nro.html(`<div class="circle blue"></div> Volantes: ${volantes_convocados.length}`);
+  var delanteros_nro = $(".nro_de_delanteros_convocados");
+  delanteros_nro.html(`<div class="circle red"></div>Delanteros: ${delanteros_convocados.length}`)
   ;
 }
+
+
+
+
+
+
+// Continuar pasos en Modal de convocatoria
+$("#step-2").hide();
+$("#step-3").hide();
+var boton_continuar = $("#btn_continue");
+boton_continuar.click(function(event){
+  if (convocados_guardados !== null){
+      if (convocados_guardados.length == 23) {
+               if (arqueros_convocados.length >= 3){
+                        Go_step2();
+                        $("#btn_goback").click(function(event){
+                                Goback_step1();
+                        })
+               } else {
+                    $("#error_arqueros").show('fast');
+               }
+      } else if (convocados_guardados.length >= 15){
+              if (arqueros_convocados.length >= 3){
+                       Go_step2();
+                       $("#btn_goback").click(function(event){
+                               Goback_step1();
+                       })
+               } else {
+                     $("#error_arqueros").show('fast');
+               }
+      }  else {
+        $("#lista_insuficiente").show('fast');
+      }       
+} else {
+   $("#jugadores_nohay").show('fast');
+}          
+})
+
+
+
+
+function Go_step2(){
+  $("#step-1").slideUp();
+  $("#step-2").slideDown();
+  $("#card-step-1").removeClass("bg-info text-light");
+  $("#card-step-2").addClass("bg-info text-light");  
+  $("#modal_footer_step1").removeClass().addClass("d-none");
+  $("#btn_goback").click(function(event){
+    Goback_step1();
+  })
+  $("#btn_confirm").click(function(event){
+        $('form[name="envio"]').validate({
+                   rules: {
+                          email:{ 
+                               required:true, 
+                                email:true
+                           },
+                          name:{ 
+                               required:true
+                           },
+                    },
+                   messages: {
+                          email:{ 
+                               required:"Campo Obligatorio",
+                               email:"Ingrese un email válido", 
+                          },
+                           name:{ 
+                              required:"Campo obligatorio"
+                           }
+                   },
+              submitHandler: function(form){
+                       Go_step3();
+              }
+         });
+  });
+}
+
+function Goback_step1(){
+  $("#step-1").slideDown();
+  $("#step-2").slideUp();
+  $("#card-step-2").removeClass("bg-info text-light");
+  $("#card-step-1").addClass("bg-info text-light"); 
+  $("#modal_footer_step1").removeClass("d-none").addClass("modal-footer d-flex justify-content-between");
+}
+
+function Go_step3(){
+  $("#step-1").slideUp();
+  $("#step-2").slideUp();
+  $("#step-3").slideDown();
+  $("#card-step-2").removeClass("bg-info text-light");
+  $("#card-step-3").addClass("bg-info text-light");  
+  var name = $('input[name="name"]').val();
+  $("#lista_enviada_a").append(`Lista enviada a ${name}`);
+  Limpiar_lista();
+  $(window).click(function(){
+     Goback_step1();
+     $("#step-3").slideUp();
+     $("#card-step-3").removeClass("bg-info text-light");
+  })
+}
+
+
+
+
+
+
+// Modal Error Close
+$(".modal_error .close").click(function(){
+  $(".modal_error").hide();
+})
+$(".modal_error a").click(function(){
+$(".modal_error").hide();
+})
+
+
+
+
+// Slide Toggle en lista de convocados
+$("#lista_de_convocados_tbody").slideUp();
+var clicks = 0;
+$("#list_toggle").click(function(){
+  clicks ++  
+  $("#list_toggle").animate(    
+    { deg: 90 },
+    {duration: 200,
+       step: function(now) {
+         $(this).css({ transform: 'rotate(' + now + 'deg)' });
+       }
+    }
+  );
+  if (clicks%2 == 0){
+    $("#list_toggle").animate(    
+      { deg: 0 },
+      {duration: 200,
+         step: function(now) {
+           $(this).css({ transform: 'rotate(' + now + 'deg)' });
+         }
+      }
+    );
+  }
+  $("#lista_de_convocados_tbody").slideToggle(200);
+});

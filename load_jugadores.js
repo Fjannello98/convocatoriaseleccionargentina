@@ -8,7 +8,7 @@ Dividir_por_posicion(jugadores);
 var block_arqueros = $("#arqueros");
 arqueros.forEach(function(arquero){
     block_arqueros.append( 
-    `<div id="${arquero.camiseta}" class="card arquero col-xs-9 col-sm-9 col-md-4 col-lg-2">
+    `<div id="${arquero.camiseta}" class="card arquero col-xs-9 col-sm-9 col-md-6 col-lg-2">
     <div class="card-body">
       <div class="card-title">
         <img class="card-img-top" src="${arquero.foto.img}" alt="${arquero.foto.alt}">
